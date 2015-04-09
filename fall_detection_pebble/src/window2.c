@@ -21,13 +21,13 @@ static void window_load2(Window *window2) {
   
   note_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text(note_layer, "Press any button");
+  text_layer_set_text(note_layer, "Knopfdruck");
   text_layer_set_text_alignment(note_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer));
   
   note_layer2 = text_layer_create((GRect) { .origin = { 0, 100 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer2, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text(note_layer2, "to stop broadcast");
+  text_layer_set_text(note_layer2, "stoppt Alarm");
   text_layer_set_text_alignment(note_layer2, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer2));
 

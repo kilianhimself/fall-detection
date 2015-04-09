@@ -20,13 +20,13 @@ static void window_load3(Window *window3) {
   
   note_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text(note_layer, "Press back again");
+  text_layer_set_text(note_layer, "Nochmal drücken");
   text_layer_set_text_alignment(note_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer));
   
   note_layer2 = text_layer_create((GRect) { .origin = { 0, 100 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer2, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text(note_layer2, "to exit");
+  text_layer_set_text(note_layer2, "zum Beenden");
   text_layer_set_text_alignment(note_layer2, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer2));
 

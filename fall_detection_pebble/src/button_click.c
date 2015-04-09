@@ -11,7 +11,7 @@ static uint32_t accel_buffer[]={0,0,0,0,0,0,0,0};
 static uint8_t position=0;
 static uint8_t WIN=2;
 static int count=0;
-static uint32_t TRESHOLD= 25000000;
+static uint32_t TRESHOLD= 250000000;
 
 
 extern void click_config_provider2(void *context);
@@ -136,7 +136,7 @@ static void up_click_handler(ClickRecognizerRef recognizer, void *context) {
 
 static void down_click_handler(ClickRecognizerRef recognizer, void *context) {
   TRESHOLD -=100000;
-  static char buf[] = "12";
+ static char buf[] = "12";
   //snprintf(buf, sizeof(buf), "%d", --count);
   //text_layer_set_text(text_layer, buf);
 }
@@ -144,8 +144,8 @@ static void down_click_handler(ClickRecognizerRef recognizer, void *context) {
 
 static void click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_SELECT, select_click_handler);
-  window_single_click_subscribe(BUTTON_ID_UP, up_click_handler);
-  window_single_click_subscribe(BUTTON_ID_DOWN, down_click_handler);
+  window_single_click_subscribe(BUTTON_ID_UP, select_click_handler);
+  window_single_click_subscribe(BUTTON_ID_DOWN, select_click_handler);
 }
 
 
@@ -154,10 +154,10 @@ static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
-  /*text_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, 20 } });
-  text_layer_set_text(text_layer, "Press a button");
+  text_layer = text_layer_create((GRect) { .origin = { 0, 0 }, .size = { bounds.size.w, 20 } });
+  text_layer_set_text(text_layer, "Press button for alert");
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
-  layer_add_child(window_layer, text_layer_get_layer(text_layer));*/
+  layer_add_child(window_layer, text_layer_get_layer(text_layer));
   
   text_date_layer = text_layer_create(GRect(8, 68, 144-8, 168-68));
   text_layer_set_text_color(text_date_layer, GColorWhite);

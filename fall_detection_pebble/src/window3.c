@@ -30,7 +30,7 @@ static void window_load3(Window *window3) {
   text_layer_set_text_alignment(note_layer2, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer2));
 
-  note_layer3 = text_layer_create((GRect) { .origin = { 0, 100 }, .size = { bounds.size.w, 28 } });
+  note_layer3 = text_layer_create((GRect) { .origin = { 0, 128 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer3, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
   text_layer_set_text(note_layer3, "zum Beenden");
   text_layer_set_text_alignment(note_layer3, GTextAlignmentCenter);

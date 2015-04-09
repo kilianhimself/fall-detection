@@ -1,6 +1,6 @@
 #include <pebble.h>
 static int count_down3=5;
-static TextLayer *text_layer3, *note_layer, *note_layer2;
+static TextLayer *text_layer3, *note_layer, *note_layer2, *note_layer3;
 static Window *window;
 
 static void select_click_handler3(ClickRecognizerRef recognizer, void *context);
@@ -20,16 +20,21 @@ static void window_load3(Window *window3) {
   
   note_layer = text_layer_create((GRect) { .origin = { 0, 72 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text(note_layer, "Nochmal drücken");
+  text_layer_set_text(note_layer, "Nochmal");
   text_layer_set_text_alignment(note_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer));
   
   note_layer2 = text_layer_create((GRect) { .origin = { 0, 100 }, .size = { bounds.size.w, 28 } });
   text_layer_set_font(note_layer2, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
-  text_layer_set_text(note_layer2, "zum Beenden");
+  text_layer_set_text(note_layer2, "drücken");
   text_layer_set_text_alignment(note_layer2, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(note_layer2));
 
+  note_layer3 = text_layer_create((GRect) { .origin = { 0, 100 }, .size = { bounds.size.w, 28 } });
+  text_layer_set_font(note_layer3, fonts_get_system_font(FONT_KEY_ROBOTO_CONDENSED_21));
+  text_layer_set_text(note_layer3, "zum Beenden");
+  text_layer_set_text_alignment(note_layer3, GTextAlignmentCenter);
+  layer_add_child(window_layer, text_layer_get_layer(note_layer3));
 }
 
 static void count_down_handler3(struct tm *tick_time, TimeUnits units_changed){
